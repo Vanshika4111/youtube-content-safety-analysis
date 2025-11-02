@@ -32,7 +32,7 @@ It replicates real-world **Trust & Safety** workflows: assessing content, identi
 ## 📊 Key Visuals & Insights
 
 ### 1️⃣ Flagged Content by Country & Category
-<img src="Flagged Content by Country and Category.png" width="700"/>
+<img src="visuals/Flagged Content by Country and Category.png" width="700"/>
 
 > Different countries show distinct moderation challenges — Hate Speech and Violence dominate across regions, especially the US and UK.
 
