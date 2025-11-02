@@ -1,5 +1,4 @@
-# youtube-content-safety-analysis
-A data analysis project on YouTube’s flagged and policy-violating content using BigQuery and spreadsheet visualization. Focused on identifying abuse trends, international patterns, and moderation insights.
+
 <h1 align="center">🎥 YouTube Content Safety & Policy Analysis</h1>
 <p align="center">
   <b>By Vanshika Sharma</b><br>
