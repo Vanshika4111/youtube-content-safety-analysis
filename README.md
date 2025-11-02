@@ -1,118 +1,47 @@
+# 🎥 YouTube Content Safety & Policy Analysis
 
-<h1 align="center">🎥 YouTube Content Safety & Policy Analysis</h1>
-<p align="center">
-  <b>By Vanshika Sharma</b><br>
-  <i>Using BigQuery, SQL & Google Sheets to uncover content moderation insights</i>
-</p>
+**Author:** Vanshika Sharma  
+**Tools:** Google BigQuery | SQL | Google Sheets | Data Visualization  
 
 ---
 
 ## 🧩 Project Overview
-This project analyzes global YouTube trending data to uncover **patterns in flagged and policy-violating content**.  
-It replicates real-world **Trust & Safety** workflows: assessing content, identifying trends, and translating data into actionable policy insights.
-
-### 🎯 Objectives
-- Identify the most common content violations (Hate Speech, Violence, etc.)
-- Analyze **cross-country** differences in flagged categories  
-- Detect **weekly spikes** in violative content  
-- Investigate **repeat offenders** (channels/videos with multiple flags)
+This project analyzes YouTube trending data to identify **patterns in flagged and policy-violating content**.  
+It simulates real **Trust & Safety work**, such as:
+- Assessing questionable or controversial content  
+- Detecting abuse trends across countries  
+- Using data to improve moderation and policy enforcement  
 
 ---
 
-## 🧠 Tools & Skills
-| Tool | Purpose |
-|------|----------|
-| **Google BigQuery** | SQL-based data cleaning & analysis |
-| **Google Sheets** | Data visualization & aggregation |
-| **SQL** | Querying and summarizing flagged content |
-| **Data Visualization** | Interpreting abuse and moderation trends |
+## 📊 Key Highlights
+- Mapped types of violations across five countries (US, GB, IN, JP, DE)  
+- Detected **weekly spikes** in policy-violating videos  
+- Found **repeat offenders** and channels with frequent flags  
+- Identified **Hate Speech** and **Violence** as dominant issues globally  
 
 ---
 
-## 📊 Key Visuals & Insights
-
-### 1️⃣ Flagged Content by Country & Category
-<img src="visuals/Flagged Content by Country and Category.png" width="700"/>
-
-> Different countries show distinct moderation challenges — Hate Speech and Violence dominate across regions, especially the US and UK.
-
----
-
-### 2️⃣ Weekly Trend of Flagged Content (2017–18)
-<img src="Weekly Trend of Flagged Content (2017-18).png" width="700"/>
-
-> Weekly spikes highlight surges in controversial content, indicating when moderation efforts may need scaling.
-
----
-
-### 3️⃣ Violations per Category
-<img src="Violations Per Category.png" width="700"/>
-
-> Hate Speech and Violence account for the majority of violations, aligning with global safety and policy enforcement priorities.
-
----
-
-### 4️⃣ Top 10 Flagged Content
-<img src="Top 10 Flagged Content.png" width="700"/>
-
-> Certain videos repeatedly trigger flags, suggesting targeted patterns of abuse or misinformation.
-
----
-
-### 5️⃣ Channels With Most Flags
-<img src="Channel With most Flags.png" width="700"/>
-
-> Identifies creators requiring stricter oversight — critical for developing consistent enforcement actions.
-
----
-## 📊 Key Visuals & Insights
-
-### 1️⃣ Flagged Content by Country and Category
-<p align="center">
-  <img src="Flagged Content by Country and Category.png" width="700">
-</p>
-
-### 2️⃣ Weekly Trend of Flagged Content (2017–18)
-<p align="center">
-  <img src="Weekly Trend of Flagged Content (2017-18).png" width="700">
-</p>
-
-### 3️⃣ Violations per Category
-<p align="center">
-  <img src="Violations Per Category.png" width="700">
-</p>
-
-### 4️⃣ Top 10 Flagged Content
-<p align="center">
-  <img src="Top 10 Flagged Content.png" width="700">
-</p>
-
-### 5️⃣ Channels With Most Flags
-<p align="center">
-  <img src="Channel With most Flags.png" width="700">
-</p>
-
-
-## 📈 Insights Summary
-- **Problem-solving:** Reviewed and assessed real digital content issues.
-- **Data-driven enforcement:** Used SQL to quantify abuse patterns.
-- **Global awareness:** Explored international moderation differences.
-- **Investigative thinking:** Detected potential repeat offenders.
-- **Attention to detail:** Translated large datasets into actionable insights.
+## 💡 Skills Demonstrated
+- Problem-solving with digital content  
+- Data analysis using BigQuery & SQL  
+- Attention to detail in trend visualization  
+- Understanding of online abuse and policy operations  
 
 ---
 
 ## 🚀 Future Enhancements
-- Integrate a dashboard using **Looker Studio or Tableau**.  
-- Automate weekly data updates via **Python or Airflow**.  
-- Extend analysis to include **comment toxicity and sentiment**.
+- Automate dashboards using Looker Studio  
+- Integrate NLP to detect toxic or harmful comments  
+- Extend dataset to cover recent years  
 
 ---
 
-## 🧾 Keywords
-`Trust & Safety` • `Policy Operations` • `YouTube` • `Data Analysis` • `Content Moderation` • `SQL` • `BigQuery` • `Cybersecurity` • `Abuse Trends` • `Digital Media`
+### 🔗 View Live Portfolio
+👉 [Hosted on GitHub Pages](https://vanshika4111.github.io/youtube-content-safety-analysis)
 
 ---
 
-<h3 align="center">🌍 Made with curiosity, empathy, and data — to make the internet a safer place.</h3>
+**Keywords:** Trust & Safety • Policy Operations • SQL • Data Analytics • YouTube • BigQuery • Content Moderation
+
 
