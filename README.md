@@ -65,6 +65,33 @@ It replicates real-world **Trust & Safety** workflows: assessing content, identi
 > Identifies creators requiring stricter oversight — critical for developing consistent enforcement actions.
 
 ---
+## 📊 Key Visuals & Insights
+
+### 1️⃣ Flagged Content by Country and Category
+<p align="center">
+  <img src="Flagged Content by Country and Category.png" width="700">
+</p>
+
+### 2️⃣ Weekly Trend of Flagged Content (2017–18)
+<p align="center">
+  <img src="Weekly Trend of Flagged Content (2017-18).png" width="700">
+</p>
+
+### 3️⃣ Violations per Category
+<p align="center">
+  <img src="Violations Per Category.png" width="700">
+</p>
+
+### 4️⃣ Top 10 Flagged Content
+<p align="center">
+  <img src="Top 10 Flagged Content.png" width="700">
+</p>
+
+### 5️⃣ Channels With Most Flags
+<p align="center">
+  <img src="Channel With most Flags.png" width="700">
+</p>
+
 
 ## 📈 Insights Summary
 - **Problem-solving:** Reviewed and assessed real digital content issues.
