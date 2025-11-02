@@ -1,101 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Content Safety Analysis | Vanshika Sharma</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Content Safety & Policy Analysis</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Prism.js for SQL code highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
   <style>
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #fafafa;
-      color: #333;
-      margin: 0;
-      padding: 0;
+      background: #0e0e12;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
     }
-    header {
-      background: linear-gradient(135deg, #007bff, #6610f2);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
+    h1, h2 {
+      color: #f3f4f6;
     }
-    header h1 {font-size: 2.5rem; margin-bottom: 10px;}
-    header p {color: #eee; font-size: 1.1rem;}
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .gradient-text {
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    h2 {border-left: 4px solid #007bff; padding-left: 10px; color: #111;}
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    .chart-img {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    img:hover {transform: scale(1.02);}
-    footer {
-      text-align: center;
-      padding: 40px;
-      background-color: #f1f1f1;
-      color: #555;
-      font-size: 0.9rem;
+    .chart-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(236, 72, 153, 0.3);
     }
-    a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
+    details summary {
+      cursor: pointer;
+      color: #a855f7;
+      font-weight: 600;
+      margin-top: 1rem;
     }
-    a:hover {text-decoration: underline;}
+    details pre {
+      background: #1f2937;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🎥 YouTube Content Safety & Policy Analysis</h1>
-    <p>By Vanshika Sharma | Data Analytics • Trust & Safety • Policy Insights</p>
-    <p>
-      <a href="https://github.com/Vanshika4111" style="color:white;">GitHub</a> |
-      <a href="https://www.linkedin.com" style="color:white;">LinkedIn</a>
-    </p>
+
+  <!-- HEADER -->
+  <header class="text-center py-10 bg-gradient-to-r from-purple-700 to-pink-500 shadow-lg">
+    <h1 class="text-4xl font-bold gradient-text mb-2">🎥 YouTube Content Safety & Policy Analysis</h1>
+    <p class="text-gray-200 text-lg">by <strong>Vanshika Sharma</strong></p>
+    <p class="text-gray-300">Tools: Google BigQuery · SQL · Google Sheets · Data Visualization</p>
   </header>
 
-  <div class="container">
-    <h2>📊 Project Overview</h2>
-    <p>
-      This project analyzes global YouTube data to detect **flagged or policy-violating content**. 
-      Using SQL and BigQuery, it explores international moderation trends, content policy enforcement, and abusive behavior patterns.
-    </p>
+  <main class="max-w-5xl mx-auto p-8 mt-8 bg-gray-900/60 backdrop-blur-lg rounded-2xl shadow-2xl">
 
-    <h2>🧠 Key Visuals & Insights</h2>
+    <!-- Overview -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🧩 Project Overview</h2>
+      <p class="text-gray-300 leading-relaxed">
+        This project analyzes YouTube trending data to identify <strong>patterns in flagged and policy-violating content</strong>.
+        It mirrors real-world <strong>Trust & Safety</strong> work, focusing on moderating sensitive categories such as
+        hate speech, terrorism, and cyber fraud across multiple countries.
+      </p>
+    </section>
 
-    <img src="Flagged Content by Country and Category.png" alt="Flagged Content by Country and Category">
-    <p><b>Insight:</b> Hate Speech and Violence dominate across regions, especially in the US and UK.</p>
+    <!-- Visual 1: Top 10 Flagged Content -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📈 Top 10 Flagged Content</h2>
+      <img src="Top 10 Flagged Content.png" alt="Top 10 Flagged Content" class="chart-img rounded-xl shadow-md mb-4">
+      <details>
+        <summary>💻 View SQL Query</summary>
+        <pre><code class="language-sql">
+SELECT
+  title,
+  flagged_label,
+  COUNT(*) AS flagged_videos
+FROM `your_project.youtube_data.flagged_content`
+WHERE flagged_label != 'None'
+GROUP BY title, flagged_label
+ORDER BY flagged_videos DESC
+LIMIT 10;
+        </code></pre>
+      </details>
+    </section>
 
-    <img src="Weekly Trend of Flagged Content (2017-18).png" alt="Weekly Trend of Flagged Content">
-    <p><b>Insight:</b> Weekly spikes in flagged content suggest moderation workload peaks in early 2018.</p>
+    <!-- Visual 2: Violations Per Category -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📊 Violations Per Category</h2>
+      <img src="Violations Per Category.png" alt="Violations Per Category" class="chart-img rounded-xl shadow-md mb-4">
+      <details>
+        <summary>💻 View SQL Query</summary>
+        <pre><code class="language-sql">
+SELECT
+  flagged_label,
+  COUNT(*) AS total_violations
+FROM `your_project.youtube_data.flagged_content`
+WHERE flagged_label != 'None'
+GROUP BY flagged_label
+ORDER BY total_violations DESC;
+        </code></pre>
+      </details>
+    </section>
 
-    <img src="Violations Per Category.png" alt="Violations per Category">
-    <p><b>Insight:</b> Hate Speech and Violence make up the majority of violations globally.</p>
+    <!-- Visual 3: Flagged Content by Country and Category -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🌍 Flagged Content by Country and Category</h2>
+      <img src="Flagged Content by Country and Category.png" alt="Flagged Content by Country" class="chart-img rounded-xl shadow-md mb-4">
+      <details>
+        <summary>💻 View SQL Query</summary>
+        <pre><code class="language-sql">
+SELECT
+  country,
+  flagged_label,
+  COUNT(*) AS flagged_videos
+FROM `your_project.youtube_data.flagged_content`
+WHERE flagged_label != 'None'
+GROUP BY country, flagged_label
+ORDER BY country, flagged_videos DESC;
+        </code></pre>
+      </details>
+    </section>
 
-    <img src="Top 10 Flagged Content.png" alt="Top 10 Flagged Content">
-    <p><b>Insight:</b> Some videos repeatedly triggered flags, showing potential content abuse clusters.</p>
+    <!-- Visual 4: Weekly Trend -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📆 Weekly Trend of Flagged Content (2017–18)</h2>
+      <img src="Weekly Trend of Flagged Content (2017-18).png" alt="Weekly Trend" class="chart-img rounded-xl shadow-md mb-4">
+      <details>
+        <summary>💻 View SQL Query</summary>
+        <pre><code class="language-sql">
+SELECT
+  DATE_TRUNC(DATE(publish_time), WEEK) AS week_start,
+  flagged_label,
+  COUNT(*) AS flagged_count
+FROM `your_project.youtube_data.flagged_content`
+WHERE flagged_label != 'None'
+GROUP BY week_start, flagged_label
+ORDER BY week_start;
+        </code></pre>
+      </details>
+    </section>
 
-    <img src="Channel With most Flags.png" alt="Channels With Most Flags">
-    <p><b>Insight:</b> Identified repeat-offending channels — potential targets for stricter moderation.</p>
+    <!-- Visual 5: Channel with Most Flags -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🎯 Channel With Most Flags</h2>
+      <img src="Channel With most Flags.png" alt="Channel With Most Flags" class="chart-img rounded-xl shadow-md mb-4">
+      <details>
+        <summary>💻 View SQL Query</summary>
+        <pre><code class="language-sql">
+SELECT
+  channel_title,
+  COUNT(*) AS total_flags
+FROM `your_project.youtube_data.flagged_content`
+WHERE flagged_label != 'None'
+GROUP BY channel_title
+ORDER BY total_flags DESC
+LIMIT 10;
+        </code></pre>
+      </details>
+    </section>
 
-    <h2>🧩 Skills Demonstrated</h2>
-    <ul>
-      <li>SQL-based content analysis (Google BigQuery)</li>
-      <li>Cross-country moderation trend identification</li>
-      <li>Policy enforcement insights</li>
-      <li>Data storytelling with visuals</li>
-    </ul>
+    <!-- Skills -->
+    <section data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-pink-400 mb-4">💡 Skills Demonstrated</h2>
+      <ul class="list-disc ml-6 space-y-1 text-gray-300">
+        <li>SQL querying and data manipulation in Google BigQuery</li>
+        <li>Aggregating and visualizing YouTube flagged content trends</li>
+        <li>Pivot-based visualization using Google Sheets</li>
+        <li>Experience with content policy, moderation, and online safety</li>
+        <li>Data storytelling for policy decision-making</li>
+      </ul>
+    </section>
 
-    <p><a href="https://github.com/Vanshika4111/youtube-content-safety-analysis">View full project on GitHub →</a></p>
-  </div>
+    <!-- Footer -->
+    <footer class="text-center mt-12 pt-6 text-gray-500 text-sm">
+      © 2025 Vanshika Sharma · Built with ❤️ using HTML & TailwindCSS
+    </footer>
 
-  <footer>
-    © 2025 Vanshika Sharma • Built using BigQuery, Sheets, and curiosity 💡
-  </footer>
+  </main>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
