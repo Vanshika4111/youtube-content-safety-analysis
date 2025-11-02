@@ -18,71 +18,84 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
 
   <style>
-   body {
-  background: linear-gradient(135deg, #1e1b4b, #312e81, #581c87);
-  color: #f5f6fa;
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-}
+    /* 🌇 Full warm gradient background */
+    body {
+      background: linear-gradient(135deg, #3b1c32, #4b2c75, #7041a8, #9b5de5);
+      color: #f5f6fa;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
 
+    /* 💜 Deep plum headers */
     h1, h2 {
-  color: #f9fafb;
-  text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
-}
+      color: #2d033b;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+      font-weight: 800;
+    }
 
+    /* Gradient text for hero title */
     .gradient-text {
-      background: linear-gradient(90deg, #a855f7, #ec4899);
+      background: linear-gradient(90deg, #f15bb5, #9b5de5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* 💎 Glow-border charts */
     .chart-img {
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background-color: rgba(31, 41, 55, 0.6);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
-   .chart-img {
-  background-color: rgba(31, 41, 55, 0.8);
-  border-radius: 1rem;
-  padding: 0.5rem;
-}
 
+    .chart-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(241, 91, 181, 0.4);
+    }
+
+    /* 💻 Readable themed SQL boxes */
     details summary {
       cursor: pointer;
-      color: #a855f7;
+      color: #f15bb5;
       font-weight: 600;
       margin-top: 1rem;
     }
+
     details pre {
-      background: #1f2937;
+      background: rgba(31, 41, 55, 0.9);
       padding: 1rem;
       border-radius: 0.5rem;
       overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
-  <header class="text-center py-10 bg-gradient-to-r from-indigo-600 via-purple-700 to-pink-600 shadow-lg">
-
-    <h1 class="text-4xl font-bold gradient-text mb-2">🎥 YouTube Content Safety & Policy Analysis</h1>
-    <p class="text-gray-200 text-lg">by <strong>Vanshika Sharma</strong></p>
-    <p class="text-gray-300">Tools: Google BigQuery · SQL · Google Sheets · Data Visualization</p>
+  <header class="text-center py-10 bg-gradient-to-r from-[#4b2c75] via-[#9b5de5] to-[#f15bb5] shadow-xl">
+    <h1 class="text-4xl font-extrabold mb-2 gradient-text">🎥 YouTube Content Safety & Policy Analysis</h1>
+    <p class="text-gray-100 text-lg">by <strong>Vanshika Sharma</strong></p>
+    <p class="text-gray-200">Tools: Google BigQuery · SQL · Google Sheets · Data Visualization</p>
   </header>
-<main class="max-w-5xl mx-auto p-8 mt-8 bg-gray-900/80 rounded-2xl shadow-2xl border border-purple-600/40">
 
+  <!-- MAIN -->
+  <main class="max-w-5xl mx-auto p-8 mt-8 bg-white/15 backdrop-blur-xl rounded-2xl shadow-2xl border border-pink-400/30">
 
-    <!-- Overview -->
+    <!-- 🧩 Project Overview -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🧩 Project Overview</h2>
-      <p class="text-gray-300 leading-relaxed">
+      <h2 class="text-2xl mb-4">🧩 Project Overview</h2>
+      <p class="text-gray-100 leading-relaxed">
         This project analyzes YouTube trending data to identify <strong>patterns in flagged and policy-violating content</strong>.
         It mirrors real-world <strong>Trust & Safety</strong> work, focusing on moderating sensitive categories such as
         hate speech, terrorism, and cyber fraud across multiple countries.
       </p>
     </section>
 
-    <!-- Visual 1: Top 10 Flagged Content -->
+    <!-- 📈 Top 10 Flagged Content -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📈 Top 10 Flagged Content</h2>
+      <h2 class="text-2xl mb-4">📈 Top 10 Flagged Content</h2>
       <img src="visuals/Top 10 Flagged Content.png" alt="Top 10 Flagged Content" class="chart-img rounded-xl shadow-md mb-4">
       <details>
         <summary>💻 View SQL Query</summary>
@@ -99,9 +112,9 @@ LIMIT 10;
       </details>
     </section>
 
-    <!-- Visual 2: Violations Per Category -->
+    <!-- 📊 Violations Per Category -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📊 Violations Per Category</h2>
+      <h2 class="text-2xl mb-4">📊 Violations Per Category</h2>
       <img src="visuals/Violations Per Category.png" alt="Violations Per Category" class="chart-img rounded-xl shadow-md mb-4">
       <details>
         <summary>💻 View SQL Query</summary>
@@ -113,14 +126,13 @@ FROM `youtube-policy-analysis.youtube_data.flagged_content`
 WHERE flagged_label != 'None'
 GROUP BY flagged_label
 ORDER BY flagged_count DESC;
-
         </code></pre>
       </details>
     </section>
 
-    <!-- Visual 3: Flagged Content by Country and Category -->
+    <!-- 🌍 Flagged Content by Country -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🌍 Flagged Content by Country and Category</h2>
+      <h2 class="text-2xl mb-4">🌍 Flagged Content by Country and Category</h2>
       <img src="visuals/Flagged Content by Country and Category.png" alt="Flagged Content by Country" class="chart-img rounded-xl shadow-md mb-4">
       <details>
         <summary>💻 View SQL Query</summary>
@@ -137,9 +149,9 @@ ORDER BY country, flagged_videos DESC;
       </details>
     </section>
 
-    <!-- Visual 4: Weekly Trend -->
+    <!-- 📆 Weekly Trend -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">📆 Weekly Trend of Flagged Content (2017–18)</h2>
+      <h2 class="text-2xl mb-4">📆 Weekly Trend of Flagged Content (2017–18)</h2>
       <img src="visuals/Weekly Trend of Flagged Content (2017-18).png" alt="Weekly Trend" class="chart-img rounded-xl shadow-md mb-4">
       <details>
         <summary>💻 View SQL Query</summary>
@@ -156,9 +168,9 @@ ORDER BY week_start;
       </details>
     </section>
 
-    <!-- Visual 5: Channel with Most Flags -->
+    <!-- 🎯 Channel with Most Flags -->
     <section class="mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">🎯 Channel With Most Flags</h2>
+      <h2 class="text-2xl mb-4">🎯 Channel With Most Flags</h2>
       <img src="visuals/Channel With most Flags.png" alt="Channel With Most Flags" class="chart-img rounded-xl shadow-md mb-4">
       <details>
         <summary>💻 View SQL Query</summary>
@@ -176,10 +188,10 @@ LIMIT 10;
       </details>
     </section>
 
-    <!-- Skills -->
+    <!-- 💡 Skills Demonstrated -->
     <section data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-pink-400 mb-4">💡 Skills Demonstrated</h2>
-      <ul class="list-disc ml-6 space-y-1 text-gray-300">
+      <h2 class="text-2xl mb-4">💡 Skills Demonstrated</h2>
+      <ul class="list-disc ml-6 space-y-1 text-gray-100">
         <li>SQL querying and data manipulation in Google BigQuery</li>
         <li>Aggregating and visualizing YouTube flagged content trends</li>
         <li>Pivot-based visualization using Google Sheets</li>
@@ -188,11 +200,10 @@ LIMIT 10;
       </ul>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center mt-12 pt-6 text-gray-500 text-sm">
+    <!-- FOOTER -->
+    <footer class="text-center mt-12 pt-6 text-gray-200 text-sm">
       © 2025 Vanshika Sharma · Built with ❤️ using HTML & TailwindCSS
     </footer>
-
   </main>
 
   <script>
